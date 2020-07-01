@@ -40,7 +40,7 @@ resource "digitalocean_droplet" "server" {
 
   provisioner "file" {
     source      = "${path.root}/scripts/consul/consul-connect-enable.hcl"
-    destination = ""/root/consul-connect-enable.hcl"
+    destination = "/root/consul-connect-enable.hcl"
   }
 
   # Nomad files
