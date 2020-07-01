@@ -22,6 +22,8 @@ jobs:
     - name: Terraform init
       env:
         DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
+        SSH_FINGERPRINT: ${{ secrets.SSH_FINGERPRINT }}
+        SERVER_COUNT: ${{ secrets.SERVER_COUNT }}
       run: terraform init -input=false
 
     - name: Terraform validation
@@ -30,4 +32,6 @@ jobs:
     - name: Terraform apply
       env:
         DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
+        SSH_FINGERPRINT: ${{ secrets.SSH_FINGERPRINT }}
+        SERVER_COUNT: ${{ secrets.SERVER_COUNT }}
       run: terraform apply -auto-approve -input=false
