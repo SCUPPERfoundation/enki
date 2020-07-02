@@ -11,18 +11,18 @@ variable "server_count" {
 
 # Create a new Web Droplet in the lon1 region
 resource "digitalocean_droplet" "server" {
-  count              = "${var.server_count}"
+  count              = var.server_count
   name               = "server-${count.index + 1}"
   image              = "ubuntu-18-04-x64"
   region             = "nyc1"
   size               = "512mb"
   private_networking = true
-  ssh_keys = ["${var.ssh_fingerprint}"]
+  ssh_keys = [var.ssh_fingerprint]
 
   connection {
     type         = "ssh"
     user         = "root"
-    host         = "${self.ipv4_address}"
+    host         = self.ipv4_address
     agent        = true
   }
 
