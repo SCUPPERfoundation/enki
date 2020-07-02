@@ -1,5 +1,5 @@
-variable "do_token" {}
+#variable "do_token" {}
 variable "ssh_fingerprint" {}
-variable "bastion_host_id" {}
+#variable "bastion_host_id" {}
 variable "server_count" {}
-variable "client_count" {}
+#variable "client_count" {}

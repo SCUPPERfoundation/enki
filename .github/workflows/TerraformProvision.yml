@@ -34,4 +34,4 @@ jobs:
         DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
         SSH_FINGERPRINT: ${{ secrets.SSH_FINGERPRINT }}
         SERVER_COUNT: ${{ secrets.SERVER_COUNT }}
-      run: terraform apply -auto-approve -input=false
+      run: terraform apply -var "ssh_fingerprint=${SSH_FINGERPRINT}" -var "server_count=${SERVER_COUNT}" -auto-approve -input=false
