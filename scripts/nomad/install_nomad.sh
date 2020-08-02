@@ -3,8 +3,8 @@
 echo "Installing Nomad on server\n"
 
 # Install nomad
-wget https://releases.hashicorp.com/nomad/0.11.3/nomad_0.11.3_linux_amd64.zip
-unzip nomad_0.11.3_linux_amd64.zip
+wget https://releases.hashicorp.com/nomad/0.12.1/nomad_0.12.1_linux_amd64.zip
+unzip nomad_0.12.1_linux_amd64.zip
 cp nomad /usr/bin/
 
 # Setup Vault Token
